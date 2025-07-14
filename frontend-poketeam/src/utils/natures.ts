@@ -1,6 +1,4 @@
-// src/utils/natures.ts
 
-// Define la estructura de una naturaleza para un Pokémon.
 export interface Naturaleza {
   nombre: string          // Nombre de la naturaleza (ej: 'Hardy', 'Lonely')
   aumenta: string | null  // Stat que aumenta con esta naturaleza (ej: 'atk', 'def')

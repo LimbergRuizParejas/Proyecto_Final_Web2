@@ -3,11 +3,7 @@ const router = express.Router();
 const EquipoPokemonController = require('../controllers/equipoPokemon.controller');
 const { verificarToken } = require('../middlewares/auth.middleware');
 
-// ==============================
-// Rutas EquipoPokemon
-// ==============================
 
-// 1. Crear un nuevo Pokémon en el equipo
 router.post('/equipo/:teamId', verificarToken, async (req, res) => {
   try {
     const nuevoPokemon = await EquipoPokemonController.agregarPokemon(req, res);
@@ -23,7 +19,7 @@ router.post('/equipo/:teamId', verificarToken, async (req, res) => {
   }
 });
 
-// 2. Obtener todos los Pokémon de un equipo
+
 router.get('/equipo/:teamId', verificarToken, async (req, res) => {
   try {
     const pokemones = await EquipoPokemonController.getPokemonesByEquipo(req, res);
@@ -39,7 +35,6 @@ router.get('/equipo/:teamId', verificarToken, async (req, res) => {
   }
 });
 
-// 3. Obtener el detalle de un Pokémon del equipo
 router.get('/:id', verificarToken, async (req, res) => {
   try {
     const pokemon = await EquipoPokemonController.verDetalle(req, res);
@@ -55,7 +50,7 @@ router.get('/:id', verificarToken, async (req, res) => {
   }
 });
 
-// 4. Actualizar un Pokémon del equipo
+
 router.put('/:id', verificarToken, async (req, res) => {
   try {
     const pokemonActualizado = await EquipoPokemonController.editarPokemon(req, res);
@@ -71,7 +66,7 @@ router.put('/:id', verificarToken, async (req, res) => {
   }
 });
 
-// 5. Eliminar un Pokémon del equipo
+
 router.delete('/:id', verificarToken, async (req, res) => {
   try {
     const pokemonEliminado = await EquipoPokemonController.eliminarPokemon(req, res);

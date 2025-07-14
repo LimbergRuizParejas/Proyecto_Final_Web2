@@ -1,4 +1,4 @@
-// src/hooks/useAuth.ts
+
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../api/auth.api'
@@ -8,7 +8,7 @@ export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null)
   const navigate = useNavigate()
 
-  // Cargar usuario desde localStorage al iniciar
+  
   useEffect(() => {
     const stored = localStorage.getItem('user')
     if (stored) {
@@ -23,7 +23,7 @@ export const useAuth = () => {
     }
   }, [])
 
-  // Función de login adaptada a { username, password }
+  
   const login = async ({ username, password }: LoginInput) => {
     try {
       const res = await loginUser({ username, password })

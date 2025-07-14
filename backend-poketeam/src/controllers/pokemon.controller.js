@@ -2,9 +2,7 @@ const { Pokemon, Movimiento } = require('../models');
 const path = require('path');
 const fs = require('fs');
 
-// =============================
-// Obtener todos los Pokémon
-// =============================
+
 exports.getAll = async (req, res) => {
   try {
     const data = await Pokemon.findAll();
@@ -28,9 +26,7 @@ exports.getAll = async (req, res) => {
   }
 };
 
-// =============================
-// Obtener un Pokémon por ID
-// =============================
+
 exports.getOne = async (req, res) => {
   try {
     const poke = await Pokemon.findByPk(req.params.id, {
@@ -69,9 +65,7 @@ exports.getOne = async (req, res) => {
   }
 };
 
-// =============================
-// Crear nuevo Pokémon
-// =============================
+
 exports.create = async (req, res) => {
   try {
     let { nombre, tipo1, tipo2, habilidades, descripcion, statsBase } = req.body;
@@ -136,9 +130,7 @@ exports.create = async (req, res) => {
   }
 };
 
-// =============================
-// Actualizar Pokémon existente
-// =============================
+
 exports.update = async (req, res) => {
   try {
     let { nombre, tipo1, tipo2, habilidades, descripcion, statsBase } = req.body;
@@ -204,9 +196,7 @@ exports.update = async (req, res) => {
   }
 };
 
-// =============================
-// Eliminar Pokémon
-// =============================
+
 exports.remove = async (req, res) => {
   try {
     const poke = await Pokemon.findByPk(req.params.id);

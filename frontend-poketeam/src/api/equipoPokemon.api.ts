@@ -2,10 +2,10 @@ import api from './api'
 import type { EquipoPokemonInput, EquipoPokemon } from '../types/equipoPokemon.types'
 
 /**
- * ✅ Agrega un Pokémon a un equipo específico.
- * @param teamId - ID del equipo
- * @param data - Datos del Pokémon a agregar
- * @returns El registro creado de EquipoPokemon
+ * .
+ * @param teamId - 
+ * @param data -
+ * @returns 
  */
 export const addPokemonToEquipo = async (teamId: number, data: EquipoPokemonInput): Promise<EquipoPokemon> => {
   try {
@@ -24,9 +24,9 @@ export const addPokemonToEquipo = async (teamId: number, data: EquipoPokemonInpu
 }
 
 /**
- * ✅ Obtiene un Pokémon del equipo por su ID.
- * @param id - ID del registro EquipoPokemon
- * @returns Detalle del EquipoPokemon
+ * 
+ * @param id - 
+ * @returns 
  */
 export const getEquipoPokemonById = async (id: number): Promise<EquipoPokemon> => {
   try {
@@ -42,10 +42,10 @@ export const getEquipoPokemonById = async (id: number): Promise<EquipoPokemon> =
 }
 
 /**
- * ✅ Edita un Pokémon dentro del equipo.
- * @param id - ID del registro EquipoPokemon
- * @param data - Nuevos datos para actualizar
- * @returns El registro actualizado
+ * 
+ * @param id - 
+ * @param data - 
+ * @returns 
  */
 export const updateEquipoPokemon = async (id: number, data: EquipoPokemonInput): Promise<EquipoPokemon> => {
   try {
@@ -64,9 +64,9 @@ export const updateEquipoPokemon = async (id: number, data: EquipoPokemonInput):
 }
 
 /**
- * ✅ Elimina un Pokémon del equipo.
- * @param id - ID del registro EquipoPokemon
- * @returns true si la operación fue exitosa
+ * .
+ * @param id - 
+ * @returns 
  */
 export const deleteEquipoPokemon = async (id: number): Promise<boolean> => {
   try {
@@ -82,9 +82,9 @@ export const deleteEquipoPokemon = async (id: number): Promise<boolean> => {
 }
 
 /**
- * ✅ Obtiene todos los Pokémon de un equipo.
- * @param teamId - ID del equipo
- * @returns Lista de los Pokémon que pertenecen al equipo
+ * 
+ * @param teamId - 
+ * @returns 
  */
 export const getTeamPokemons = async (teamId: number): Promise<EquipoPokemon[]> => {
   try {

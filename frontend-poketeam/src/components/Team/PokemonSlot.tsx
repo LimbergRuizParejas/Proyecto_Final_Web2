@@ -6,10 +6,10 @@ interface Props {
 }
 
 const PokemonSlot = ({ pokemon }: Props) => {
-  // Construimos la URL correcta para la imagen
+
   const pokeImageUrl = pokemon.pokemon?.imagen
-    ? `http://localhost:3000/uploads/pokemons/${pokemon.pokemon.imagen}`  // Usar imagen desde el backend
-    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemonId}.png`  // Fallback en caso de que no exista imagen en el servidor
+    ? `http://localhost:3000/uploads/pokemons/${pokemon.pokemon.imagen}`  
+    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemonId}.png`  
 
   return (
     <div className="bg-white rounded-lg shadow p-4 flex items-center justify-between hover:shadow-md transition">

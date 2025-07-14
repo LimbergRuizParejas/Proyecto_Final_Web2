@@ -5,7 +5,7 @@ interface Props {
 }
 
 const EquipoResumen = ({ equipo }: Props) => {
-  // Aseguramos que los Pokémon del equipo estén disponibles en caso de que falten.
+  
   const pokemones = equipo.pokemones || equipo.equipoPokemon || []
 
   return (

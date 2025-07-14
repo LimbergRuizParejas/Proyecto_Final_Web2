@@ -30,11 +30,8 @@ app.use((req, res, next) => {
   next()
 })
 
-// ================================
-// Servir carpetas específicas
-// ================================
 
-// Items
+
 const itemsPath = path.resolve(__dirname, '..', 'uploads', 'items')
 if (fs.existsSync(itemsPath)) {
   console.log('📂 Sirviendo imágenes de ítems desde:', itemsPath)
@@ -77,25 +74,19 @@ app.use('/api/items', require('./routes/item.routes'))
 app.use('/api/movimientos', require('./routes/movimiento.routes'))
 app.use('/api/equipo-pokemon', require('./routes/equipoPokemon.routes'))
 
-// ================================
-// Ruta raíz
-// ================================
+
 app.get('/', (req, res) => {
   console.log('✅ Ruta raíz "/" accedida correctamente')
   res.send('🚀 API Pokédex + Teambuilder funcionando ✅')
 })
 
-// ================================
-// Middleware 404
-// ================================
+
 app.use((req, res) => {
   console.warn(`⚠️ Ruta no encontrada: ${req.method} ${req.originalUrl}`)
   res.status(404).json({ success: false, msg: 'Endpoint no encontrado' })
 })
 
-// ================================
-// Middleware global errores
-// ================================
+
 app.use((err, req, res, next) => {
   console.error('🔥 Error global no capturado:', err)
   res.status(500).json({
@@ -105,9 +96,7 @@ app.use((err, req, res, next) => {
   })
 })
 
-// ================================
-// Sincronizar DB e iniciar servidor
-// ================================
+
 const alterDb = process.env.DB_ALTER === 'true' || false
 
 db.sequelize.sync({ alter: alterDb })
